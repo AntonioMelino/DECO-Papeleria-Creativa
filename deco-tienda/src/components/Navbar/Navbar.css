@@ -1,0 +1,128 @@
+/* src/components/Navbar/Navbar.css */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(253, 246, 238, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(212, 168, 83, 0.2);
+  padding: 0 2rem;
+}
+
+.navbar__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0 0.5rem;
+}
+
+/* ── Logo ── */
+.navbar__logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.navbar__logo-name {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--charcoal);
+  letter-spacing: -0.02em;
+}
+
+.navbar__logo-name span {
+  color: var(--deep-rose);
+}
+
+.navbar__logo-tagline {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--mauve);
+  margin-top: 2px;
+}
+
+/* ── Cart button ── */
+.navbar__cart-btn {
+  position: relative;
+  background: var(--charcoal);
+  color: var(--cream);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 0.6rem 1.4rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition-smooth);
+}
+
+.navbar__cart-btn:hover {
+  background: var(--deep-rose);
+  transform: translateY(-1px);
+}
+
+.navbar__cart-count {
+  background: var(--gold);
+  color: var(--charcoal);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Category nav ── */
+.navbar__nav {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  padding-bottom: 0.75rem;
+  scrollbar-width: none;
+}
+
+.navbar__nav::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar__nav-item {
+  background: none;
+  border: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--mauve);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  transition: var(--transition-smooth);
+  letter-spacing: 0.02em;
+}
+
+.navbar__nav-item:hover {
+  color: var(--charcoal);
+  background: var(--light-gray);
+}
+
+.navbar__nav-item--active {
+  background: var(--charcoal);
+  color: var(--cream);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+  .navbar__logo-name {
+    font-size: 1.8rem;
+  }
+}

@@ -1,0 +1,82 @@
+/* =========================================
+   src/styles/global.css
+   Variables globales y estilos base
+========================================= */
+
+:root {
+  --cream: #FDF6EE;
+  --blush: #F2C4CE;
+  --rose: #E8849A;
+  --deep-rose: #C45C7A;
+  --mauve: #9B6B7A;
+  --sage: #A8C5B5;
+  --sage-dark: #6B9E8A;
+  --gold: #D4A853;
+  --gold-light: #F0D49A;
+  --charcoal: #3A2D35;
+  --soft-white: #FFFBF7;
+  --light-gray: #F5EDE8;
+
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-pill: 50px;
+
+  --shadow-card: 0 20px 50px rgba(58, 45, 53, 0.12);
+  --shadow-modal: 0 30px 80px rgba(58, 45, 53, 0.25);
+  --transition-bounce: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--charcoal);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 10% 20%, rgba(242,196,206,0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 90% 80%, rgba(168,197,181,0.2) 0%, transparent 70%),
+    radial-gradient(ellipse 300px 300px at 50% 50%, rgba(212,168,83,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+button { font-family: var(--font-body); cursor: pointer; }
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
