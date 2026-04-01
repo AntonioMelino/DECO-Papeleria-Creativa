@@ -1,10 +1,15 @@
 // src/components/Navbar/Navbar.jsx
 
-import React from 'react';
-import { CATEGORIES } from '../../data/products';
-import './Navbar.css';
+import React from "react";
+import { CATEGORIES } from "../../data/products";
+import "./Navbar.css";
 
-export default function Navbar({ activeCategory, onCategoryChange, cartCount, onOpenCart }) {
+export default function Navbar({
+  activeCategory,
+  onCategoryChange,
+  cartCount,
+  onOpenCart,
+}) {
   return (
     <header className="navbar">
       <div className="navbar__top">
@@ -13,7 +18,7 @@ export default function Navbar({ activeCategory, onCategoryChange, cartCount, on
           <span className="navbar__logo-name">
             DECO<span>·</span>
           </span>
-          <span className="navbar__logo-tagline">Regalería &amp; Cotillón</span>
+          <span className="navbar__logo-tagline">Papelería Creativa</span>
         </div>
 
         {/* Cart button */}
@@ -28,7 +33,7 @@ export default function Navbar({ activeCategory, onCategoryChange, cartCount, on
         {CATEGORIES.map((cat) => (
           <button
             key={cat.id}
-            className={`navbar__nav-item ${activeCategory === cat.id ? 'navbar__nav-item--active' : ''}`}
+            className={`navbar__nav-item ${activeCategory === cat.id ? "navbar__nav-item--active" : ""}`}
             onClick={() => onCategoryChange(cat.id)}
           >
             {cat.label}
